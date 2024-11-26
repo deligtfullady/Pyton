@@ -1,0 +1,18 @@
+import pandas as pd 
+import seaborn as sns 
+import matplotlib.pyplot as plt 
+
+# Загрузка данных из CSV-файла 
+df = pd.read_csv('data.csv') 
+# Создание точечного графика с использованием Seaborn 
+# ОсьX:зарплата(salary) 
+# ОсьY:бонусы(bonus) 
+# Размер точек пропорционален количеству лет в компании (years_at_company) 
+sns.scatterplot(x='salary',y='bonus',size='years_at_company', data=df) 
+# Настройка заголовка графика 
+plt.title('SalaryvsBonuswithYearsatCompany') 
+# Настройка меток осей 
+plt.xlabel('Salary') 
+plt.ylabel('Bonus') 
+# Отображение графика
+plt.show()
